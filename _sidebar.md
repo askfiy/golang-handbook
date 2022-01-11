@@ -15,6 +15,7 @@
   - [切片类型](/数据类型/切片类型.md)
   - [映射类型](/数据类型/映射类型.md)
   - [指针类型](/数据类型/指针类型.md)
+  - [类型定制](/数据类型/类型定制.md)
 - **分支循环**
   - [if/else](/分支循环/if_else.md)
   - [switch/case](/分支循环/switch_case.md)
@@ -35,7 +36,7 @@
   - [结构体](/面向接口/结构体.md)
   - [方法](/面向接口/方法.md)
   - [接口](/面向接口/接口.md)
-  - [type](/面向接口/type.md)
+  - [OOP](/面向接口/OOP.md)
 - **并发编程**
   - [goroutine](/并发编程/goroutine.md)
   - [channel](/并发编程/channel.md)
@@ -43,12 +44,11 @@
   - [select](/并发编程/select.md)
   - [lock](/并发编程/lock.md)
   - [原子操作](/并发编程/原子操作.md)
-- **其他内容**
+  - [sync 包](/并发编程/sync包.md)
+- **工程开发**
   - [go mod](/基础知识/go_mod.md)
   - [单元测试](/基础知识/单元测试.md)
   - [压力测试](/基础知识/压力测试.md)
-
-
 - **标准库包**
   - [fmt](/标准库包/fmt.md)
   - [strings](/标准库包/strings.md)
@@ -57,7 +57,6 @@
   - [json](/标准库包/json.md)
   - [regexp](/标准库包/regexp.md)
   - [sort](/标准库包/sort.md)
-  - [strings](/标准库包/strings.md)
   - [path/filepath](/path/filepath.md)
   - [reflect](/标准库包/reflect.md)
   - [runtime](/path/runtime.md)
