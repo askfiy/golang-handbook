@@ -1,6 +1,6 @@
 var gitalk = new Gitalk({
-  clientID: "5a91d7542359689ea77e",
-  clientSecret: "eb389e4bd3b49ab48f5e542284ff0a06ec91fcd7",
+  clientID: "1b09b883decb1685c577",
+  clientSecret: "9b02e2bf236abc4ee60aa376ad6d4a5be465bf81",
   repo: "golang-handbook",
   owner: "askfiy",
   admin: ["askfiy"],

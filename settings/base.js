@@ -1,6 +1,6 @@
 window.$docsify = {
   name: "Golang 学习手册",
-  repo: "https://github.com/KahnDepot/golang-handbook.git",
+  repo: "https://github.com/askfiy/golang-handbook.git",
   loadSidebar: true,
   alias: {
     "/.*/_sidebar.md": "/_sidebar.md",
