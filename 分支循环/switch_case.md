@@ -182,7 +182,7 @@ func main() {
 	var logTime string = time.Now().Format("2006-1-2 15:4:5")
 	var logLine string = fmt.Sprintf("[%s] [%s] : %s", logLevel, logTime, logMessage)
 
-	fmt.Printf("%s \n", logLine)
+	fmt.Printf("%s\n", logLine)
 	switch strings.ToLower(logLevel) {
 	case "error":
 		fmt.Printf("write to error log file ...\n")
@@ -229,18 +229,11 @@ import "fmt"
 func main() {
 	switch name := "Jack"; {
 	case name == "Jack":
-		fmt.Printf("name is Jack \n")
+		fmt.Printf("name is Jack\n")
 	case name == "Tom":
-		fmt.Printf("name not is Jack \n")
+		fmt.Printf("name not is Jack\n")
 	default:
 		fmt.Printf("who are you?\n")
 	}
 }
 ```
-
-
-
-
-
-
-

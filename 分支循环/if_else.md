@@ -161,10 +161,9 @@ import "fmt"
 
 func main() {
 	if name := "Jack"; name == "Jack" {
-		fmt.Printf("name is Jack \n")
+		fmt.Printf("name is Jack\n")
 	} else {
-		fmt.Printf("name not is Jack \n")
+		fmt.Printf("name not is Jack\n")
 	}
 }
 ```
-

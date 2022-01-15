@@ -177,7 +177,7 @@ func add(x int, y int) int {
 	return x + y
 }
 func callbackfn(result int) {
-	fmt.Printf("%d \n", result)
+	fmt.Printf("%d\n", result)
 }
 
 func main() {

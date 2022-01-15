@@ -19,9 +19,9 @@ func main() {
 	for {
 		select {
 		case ch <- i:
-			fmt.Printf("write : %d \n", i)
+			fmt.Printf("write : %d\n", i)
 		case x := <-ch:
-			fmt.Printf("read  : %d \n", x)
+			fmt.Printf("read  : %d\n", x)
 		default:
 			fmt.Printf("not write and not read\n")
 		}
