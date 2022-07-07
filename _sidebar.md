@@ -61,3 +61,5 @@
   - [path/filepath](/path/filepath.md)
   - [reflect](/标准库包/reflect.md)
   - [runtime](/path/runtime.md)
+- **最新特性**
+  - [go 1.8](/最新特性/go_1.8.md)
