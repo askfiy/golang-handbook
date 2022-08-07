@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Golang学习手册</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <link rel="shortcut icon" href="./media/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css"
+    />
+    <!-- 自定义样式配置 -->
+    <link rel="stylesheet" href="./settings/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- 定义评论区域 -->
+    <div id="gitalk-container" style="display: none"></div>
+    <!-- 基础配置项 -->
+    <script src="./settings/base.js"></script>
+    <!-- 加载评论插件相关配置 -->
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+    <!-- git评论插件 -->
+    <script src="./settings/gitalk_settings.js"></script>
+    <!-- Docsify v4 -->
+    <!-- 它本身的docsify这个版本存在一个小bug，所以下面这个版本修改了源码 -->
+    <!-- <script src="//cdn.jsdelivr.net/npm/docsify@4"></script> -->
+    <script src="./resource/docsify-min.js"></script>
+    <!-- 搜索插件 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- emoji解析 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!-- 代码复制 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- 盘古之白 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+    <!-- 支持左侧菜单栏的折叠 -->
+    <!-- <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script> -->
+    <!-- 显示阅读进度 -->
+    <script src="https://cdn.jsdelivr.net/npm/docsify-progress@latest/dist/progress.min.js"></script>
+    <!-- GIF播放控件 -->
+    <link
+      rel="stylesheet"
+      href="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.css"
+    />
+    <script src="//unpkg.com/docsify-gifcontrol/dist/docsify-gifcontrol.js"></script>
+    <!-- 页脚增加上一章、下一章 -->
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  </body>
+</html>
