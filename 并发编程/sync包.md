@@ -50,7 +50,7 @@ Golang 内置的 map 不是并发安全的，但是 sync 包所提供的 map 却
 | Load(k)                                    | 通过键取出值                               |
 | LoadorStore(k, v)                          | 根据键取出值，如果没有该键则创建这组键值对 |
 | Delete(k)                                  | 删除一组键值对                             |
-| Range(f func(key, value interface{}) bool) | 遍历出键和值                               |
+| Range(f func(key, value any) bool) | 遍历出键和值                               |
 
 代码示例：
 
@@ -78,7 +78,7 @@ func main() {
 	}()
 
 	wg.Wait()
-	shine.Range(func(k, v interface{}) bool {
+	shine.Range(func(k, v any) bool {
 		fmt.Printf("key : %#v, value : %#v\n", k, v)
 		return true
 	})
