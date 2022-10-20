@@ -141,7 +141,8 @@ replace (
 
 ## 导入当前项目下的包
 
-目录结构，package1 位于 project 中，并且没有 go.mod 文件：
+目录结构如下，package1 位于 project 中，并且没有 go.mod 文件：
+
 
 ```
 project
@@ -179,7 +180,7 @@ func main() {
 
 ## 导入另一个项目的包
 
-目录结构，2 个项目都有自己的 go.mod 文件，并且是同级关系：
+目录结构如下，2 个项目都有自己的 go.mod 文件，并且是同级关系：
 
 ```
 .

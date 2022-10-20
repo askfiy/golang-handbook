@@ -40,8 +40,8 @@
 - **并发编程**
   - [goroutine](/并发编程/goroutine.md)
   - [channel](/并发编程/channel.md)
-  - [task pool](/并发编程/task_pool.md)
   - [select](/并发编程/select.md)
+  - [task pool](/并发编程/task_pool.md)
   - [lock](/并发编程/lock.md)
   - [原子操作](/并发编程/原子操作.md)
   - [sync 包](/并发编程/sync包.md)

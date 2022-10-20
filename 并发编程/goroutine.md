@@ -26,7 +26,7 @@ GPM 是 Golang 运行时 runtime 层面实现的一套 goroutine 调度系统，
 - P 是存放 G 的队列，可以有多个，按 CPU 核心数来决定
 - M 是 P 的调度管理，每个 P 都对应 1 个 M， 而每个 M 都会映射 1 个 os 线程， P 中的 G 最后都会通过 M 在 os 线程上执行
 
-其实在 GPM 调度系统中，不光只有 P 这 1 种队列来存放 G，还有 1 个全局的队列也会存放 G，这是因为每个 P 中存储 G 的容量是有限制的（最多 265），当所有 P 都被 G 存满之后，新存入的 G 会存放到全局队列中。
+其实在 GPM 调度系统中，不光只有 P 这 1 种队列来存放 G，还有 1 个全局的队列也会存放 G，这是因为每个 P 中存储 G 的容量是有限制的（最多 256），当所有 P 都被 G 存满之后，新存入的 G 会存放到全局队列中。
 
 P 中的 G 一般情况下只会在其对应的 M 上执行。而全局队列中的 G 可能会被所有的 M 执行，这意味着全局队列中的 G 被操作时必须要加锁。
 
@@ -87,28 +87,29 @@ import (
 	"sync"
 )
 
-// 新增一个计数器
-var wg sync.WaitGroup
-
-func task(taskNumber int) {
+func task(taskNumber int, wg *sync.WaitGroup) {
 	// 让计数器 - 1
 	defer wg.Done()
 	fmt.Printf("task [%d] running ...\n", taskNumber)
 }
 
 func main() {
+	// 初始化一个计数器
+	var wg sync.WaitGroup
+
 	fmt.Printf("main goroutine start ..\n")
+
 	for i := 0; i < 10; i++ {
 		// 让计数器 + 1
 		wg.Add(1)
-		go task(i)
+		go task(i, &wg)
 	}
+
 	// 只有当计数器为 0 时，主 goroutine 才会继续运行
 	// 否则主 goroutine 将会等待，类似于守护线程
 	wg.Wait()
 	fmt.Printf("main goroutine end ..\n")
 }
-
 ```
 
 # 任务控制
@@ -135,9 +136,8 @@ import (
 	"sync"
 )
 
-var wg sync.WaitGroup
 
-func task(taskNumber int) {
+func task(taskNumber int, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for i := 0; i < 1e+5; i++ {
 		fmt.Printf("task [%d] run [%d] times\n", taskNumber, i+1)
@@ -147,11 +147,15 @@ func task(taskNumber int) {
 func main() {
 	// 只开启一个 os 线程
 	runtime.GOMAXPROCS(1)
+	var wg sync.WaitGroup
+
 	fmt.Printf("main goroutine start ..\n")
+
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
-		go task(i)
+		go task(i, &wg)
 	}
+
 	wg.Wait()
 	fmt.Printf("main goroutine end ..\n")
 }
@@ -170,9 +174,7 @@ import (
 	"sync"
 )
 
-var wg sync.WaitGroup
-
-func task(taskNumber int) {
+func task(taskNumber int, wg *sync.WaitGroup) {
 	defer wg.Done()
 	for i := 0; i < 1e+5; i++ {
 		if i == 100 {
@@ -184,11 +186,15 @@ func task(taskNumber int) {
 }
 
 func main() {
+	var wg sync.WaitGroup
+
 	fmt.Printf("main goroutine start ..\n")
+
 	for i := 0; i < 1000; i++ {
 		wg.Add(1)
-		go task(i)
+		go task(i, &wg)
 	}
+
 	wg.Wait()
 	fmt.Printf("main goroutine end ..\n")
 }
