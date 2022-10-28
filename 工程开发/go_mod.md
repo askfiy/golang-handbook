@@ -46,8 +46,8 @@ GOPROXY 意为从哪里下载 Golang 依赖包，默认是国外源，这里修�
 | go mod graph    | 打印当前项目模块依赖图           |
 | go mod tidy     | 增加缺少的包、移除无用的包       |
 | go mod vendor   | 将依赖赋值到 vendor 目录下       |
-| go mode verify  | 校验依赖                         |
-| go mode why     | 解释为什么需要依赖               |
+| go mod verify   | 校验依赖                         |
+| go mod why      | 解释为什么需要依赖               |
 
 ## 创建项目
 
@@ -118,6 +118,10 @@ go 1.17
 require github.com/google/uuid v1.3.0
 ```
 
+若想将下载的第三方包包移动到当前项目下，可使用 go mod vendor 命令，它将在当前项目根目录下创建一个 vendor 目录，并将第三方包存放过来。
+
+当项目中不再需要使用某个第三方包时，可以运行 go mod tidy 命令移除它。
+
 ## 替换包源
 
 go.mod 文件提供了 4 种配置项：
@@ -142,7 +146,6 @@ replace (
 ## 导入当前项目下的包
 
 目录结构如下，package1 位于 project 中，并且没有 go.mod 文件：
-
 
 ```
 project
