@@ -53,6 +53,32 @@ func main() {
 
 使用 for/range 遍历映射：
 
+使用 1 个迭代变量只能拿到 key：
+
+```
+package main
+
+import "fmt"
+
+func main() {
+	var shine = map[string]string{
+		"key1": "value1",
+		"key2": "value2",
+		"key3": "value3",
+	}
+	for key := range shine {
+		value := shine[key]
+		fmt.Printf("key:(%s) value(%s)\n", key, value)
+	}
+}
+
+// key:(key1) value(value1)
+// key:(key2) value(value2)
+// key:(key3) value(value3)
+```
+
+使用 2 个迭代变量可以同时拿到 key 和 value：
+
 ```
 package main
 
