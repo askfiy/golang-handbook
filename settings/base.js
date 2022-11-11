@@ -43,6 +43,15 @@ window.$docsify = {
     crossChapter: true,
     crossChapterText: true,
   },
+  // 备案号
+  beian: {
+    ICP: "蜀ICP备2022002786号-1",
+    NISMSP: {
+      number: "",
+      url: "http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=2022002786",
+      id: "",
+    },
+  },
   // 自定义插件
   plugins: [
     function (hook, vm) {
